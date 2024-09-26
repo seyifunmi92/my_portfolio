@@ -1,13 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:oluwaseyi_fatunmole_portfolio/core/layout/build/sizer.dart';
 // ignore_for_file: non_constant_identifier_names
 
 extension Sizer on int {
   MediaQueryData get mq => MediaQueryData.fromView(WidgetsBinding.instance.platformDispatcher.views.single);
 
-  num get FIGMA_HEIGHT => 800;
+  num get FIGMA_HEIGHT => deviceType == Device_Type.WEB ? 900 : 800;
 
-  num get FIGMA_WIDTH => 300;
+  num get FIGMA_WIDTH => deviceType == Device_Type.WEB ? 1920 : 300;
 
   num get PADDING_TOP => mq.padding.top;
 

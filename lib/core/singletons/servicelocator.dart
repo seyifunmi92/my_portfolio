@@ -20,9 +20,7 @@ Future<void> initServiceLocator() async {
     ///theme
     ..registerSingleton<AppTheme>(AppTheme.instance)
 
-    ///
+    ///image handler
     ..registerSingleton<ImageWidget>(ImageWidget.instance)
-
-    ///
     ..registerLazySingleton<ImageHolder>(() => ImageHolder());
 }

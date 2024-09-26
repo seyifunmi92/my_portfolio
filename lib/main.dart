@@ -4,6 +4,6 @@ import 'package:oluwaseyi_fatunmole_portfolio/core/singletons/singleton_managers
 
 
 ///entry point of application
-void main() async {
+void main() async =>
   await initServiceLocator().then((value) => runApp(Managers.app));
-}
+

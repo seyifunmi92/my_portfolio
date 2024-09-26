@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
       body: Pad(
         child: IText(
           value: "Oluwaseyi Fatunmole",
-          fontsize: 5.fsize,
+          fontsize: 30.fsize,
         ),
       ),
     );

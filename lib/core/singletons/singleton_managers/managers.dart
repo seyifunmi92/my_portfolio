@@ -1,5 +1,4 @@
 import '../../app/app.dart';
-import 'package:flutter/material.dart';
 import 'package:oluwaseyi_fatunmole_portfolio/core/constants/images.dart';
 import 'package:oluwaseyi_fatunmole_portfolio/core/theme/themehelper.dart';
 import 'package:oluwaseyi_fatunmole_portfolio/core/singletons/servicelocator.dart';
