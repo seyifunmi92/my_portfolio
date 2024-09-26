@@ -1,9 +1,8 @@
-// ignore_for_file: must_be_immutable
-
-import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:oluwaseyi_fatunmole_portfolio/core/constants/colors.dart';
 import 'package:oluwaseyi_fatunmole_portfolio/core/extensions/sizerextension.dart';
+// ignore_for_file: must_be_immutable
 
 class IText extends StatelessWidget {
   String value;
@@ -27,11 +26,11 @@ class IText extends StatelessWidget {
       style: style ??
           TextStyle(
             height: textHeight,
-            fontFamily: fontfamily ?? "",
+            fontFamily: fontfamily ?? "mont",
             fontWeight: fontWeight ?? FontWeight.normal,
             fontSize: fontsize ?? 10.fsize,
             letterSpacing: letterSpacing,
-            color: fontColor ?? ColorHelper.blackcontainer1,
+            color: fontColor ?? ColorHelper.white,
           ),
     );
   }

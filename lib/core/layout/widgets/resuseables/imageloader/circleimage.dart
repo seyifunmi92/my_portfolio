@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:developer';
 import 'dart:typed_data';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
