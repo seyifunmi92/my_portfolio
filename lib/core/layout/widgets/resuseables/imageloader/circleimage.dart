@@ -1,14 +1,25 @@
 import 'dart:io';
+import 'dart:developer';
 import 'dart:typed_data';
+import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:oluwaseyi_fatunmole_portfolio/core/extensions/sizerextension.dart';
+import 'package:oluwaseyi_fatunmole_portfolio/core/singletons/singleton_managers/managers.dart';
 
 class ImageWidget {
   ImageWidget._internal();
   static ImageWidget instance = ImageWidget._internal();
 
   ///build circle avatar
-  buildImage({double? radius, Widget? child, String? imagePath, String? imageUrl, bool? isClipRect}) => checkImageWidgetToReturn(radius: radius, child: child, imagePath: imagePath, isClipRect: isClipRect, isAvatar: !isClipRect!);
+  Widget buildImage({
+    double? radius,
+    Widget? child,
+    String? imagePath,
+    String? imageUrl,
+    bool? isClipRect = true,
+    String? svg,
+  }) =>
+      checkImageWidgetToReturn(radius: radius, child: child, imagePath: imagePath, isClipRect: isClipRect, isAvatar: !isClipRect!, svg: svg);
 
   ///build cliprect
   Widget buildClipRect({double? radius, Widget? child}) => ClipRRect(
@@ -61,32 +72,38 @@ class ImageWidget {
         )
       : FileImage(path);
 
+  ///build image from svg path
+  Widget buildSvgImage({String? svg, double? height, BoxFit? fit}) => SvgPicture.asset(svg ?? Managers.imageholder.placeHolder, height: height ?? 30.h, fit: fit ?? BoxFit.contain);
+
   ///check image to return
-  checkImageWidgetToReturn({
+  dynamic checkImageWidgetToReturn({
     double? radius,
     Widget? child,
     String? imagePath,
     String? imageUrl,
     bool? isClipRect,
     bool? isAvatar,
+    String? svg,
   }) {
     if (radius != null) {
       bool isImageClip = isClipRectImage(isClipRect, isAvatar);
-      isImageClip ? buildClipRect(radius: radius, child: child ?? getImageTypeToReturn(true)) : buildCircleAvatar(radius: radius, image: getImageTypeToReturn(false));
+      return isImageClip ? buildClipRect(radius: radius, child: child ?? getImageTypeToReturn(true)) : buildCircleAvatar(radius: radius, image: getImageTypeToReturn(false));
     } else {
-      getImageTypeToReturn(true);
+      return getImageTypeToReturn(true);
     }
   }
 
-  dynamic getImageTypeToReturn(isClipRect, {String? imagePath, String? ImageUrl, File? file, Uint8List? byte}) {
+  dynamic getImageTypeToReturn(isClipRect, {String? imagePath, String? imageUrl, File? file, Uint8List? byte, String? svg}) {
     if (imagePath != null) {
       return buildAssetImage(isClipRect, imagePath);
-    } else if (ImageUrl != null) {
-      return buildNetworkImage(isClipRect, ImageUrl);
+    } else if (imageUrl != null) {
+      return buildNetworkImage(isClipRect, imageUrl);
     } else if (file != null) {
       return buildFileImage(isClipRect, file);
+    } else if (byte != null) {
+      return buildMemoryImage(isClipRect, byte);
     } else {
-      return buildMemoryImage(isClipRect, byte!);
+      return buildSvgImage(svg: svg);
     }
   }
 
