@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:oluwaseyi_fatunmole_portfolio/core/singletons/singleton_managers/managers.dart';
-// ignore_for_file: prefer_const_constructors_in_immutables
-
 
 class AppInstance extends StatefulWidget {
   const AppInstance({super.key});
@@ -13,6 +11,11 @@ class AppInstance extends StatefulWidget {
 class _AppInstanceState extends State<AppInstance> {
   @override
   Widget build(BuildContext context) => MaterialApp(
+        themeMode: Managers.theme.mode,
+        theme: Managers.theme.appLightTheme,
+        darkTheme: Managers.theme.appDarkTheme,
+        debugShowCheckedModeBanner: false,
+        routes: Managers.route.routes,
         home: Managers.home,
       );
 }

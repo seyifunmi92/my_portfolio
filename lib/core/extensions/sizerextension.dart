@@ -21,5 +21,5 @@ extension Sizer on int {
 
   double get w => DEVICE_WIDTH / (FIGMA_WIDTH / this);
 
-  double get size => h > w ? h : w;
+  double get fsize => h > w ? h : w;
 }

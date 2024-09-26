@@ -11,9 +11,6 @@ extension MQs on BuildContext {
   replaceAll(String route, {Object? args}) => Navigator.of(this).pushNamedAndRemoveUntil(route, (x) => x.settings.name == route, arguments: args);
 
   push(Widget route) => Navigator.push(this, MaterialPageRoute(builder: (builder) => route));
-  
+
   pop() => Navigator.canPop(this);
 }
-
-
-
