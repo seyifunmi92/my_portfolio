@@ -16,8 +16,8 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: Pad(
         child: IText(
-          value: "Oluwaseyi Fatunmole",
-          fontsize: 30.fsize,
+          value: "Oluwaseyi Fatunmole : Senior Software Engineer ",
+          fontsize: 40.fsize,
         ),
       ),
     );

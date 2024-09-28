@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class ColorHelper {
   static const Color white = Colors.white;
   static const Color black = Colors.black;
+  static const Color background = Color(0xff171718);
   static Color blackcontainer1 = const Color(0xff1b1c1b);
   static Color blackcontainer2 = const Color(0xff21241e);
   static Color blackcontainer3 = const Color(0xff42453f);

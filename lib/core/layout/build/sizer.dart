@@ -16,6 +16,8 @@ enum Device_Orientation {
 Device_Type deviceType = getCurrentDeviceType(MediaQueryData.fromView(WidgetsBinding.instance.platformDispatcher.views.single).size.height, MediaQueryData.fromView(WidgetsBinding.instance.platformDispatcher.views.single).size.width);
 Device_Orientation deviceOrientation = getCurrentDeviceOrientation();
 
+Device_Orientation getCurrentDeviceOrientation() => MediaQueryData.fromView(WidgetsBinding.instance.platformDispatcher.views.single).orientation.name.toLowerCase() == "landscape" ? Device_Orientation.LANDSCAPE : Device_Orientation.PORTRAIT;
+
 Device_Type getCurrentDeviceType(double height, double width) {
   if (height > 600 && width > 1000) {
     return Device_Type.WEB;
@@ -25,5 +27,3 @@ Device_Type getCurrentDeviceType(double height, double width) {
     return Device_Type.PHONE;
   }
 }
-
-Device_Orientation getCurrentDeviceOrientation() => MediaQueryData.fromView(WidgetsBinding.instance.platformDispatcher.views.single).orientation.name.toLowerCase() == "landscape" ? Device_Orientation.LANDSCAPE : Device_Orientation.PORTRAIT;
