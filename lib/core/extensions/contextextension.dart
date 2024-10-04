@@ -13,4 +13,9 @@ extension MQs on BuildContext {
   push(Widget route) => Navigator.push(this, MaterialPageRoute(builder: (builder) => route));
 
   pop() => Navigator.canPop(this);
+
+  ///get full device height
+  double get deviceHeight => MediaQuery.of(this).size.height;
+
+  double get deviceWidth => MediaQuery.of(this).size.width;
 }

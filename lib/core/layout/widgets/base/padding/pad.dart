@@ -12,7 +12,7 @@ class Pad extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: padding ?? EdgeInsets.symmetric(horizontal: width ?? 9.w),
+      padding: padding ?? EdgeInsets.symmetric(horizontal: width ?? 50.w),
       child: child,
     );
   }

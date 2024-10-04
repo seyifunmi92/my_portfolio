@@ -28,7 +28,7 @@ class IText extends StatelessWidget {
             height: textHeight,
             fontFamily: fontfamily ?? "mont",
             fontWeight: fontWeight ?? FontWeight.normal,
-            fontSize: fontsize ?? 10.fsize,
+            fontSize: fontsize ?? 20.fsize,
             letterSpacing: letterSpacing,
             color: fontColor ?? ColorHelper.white,
           ),

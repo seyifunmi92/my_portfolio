@@ -6,7 +6,7 @@ import 'package:oluwaseyi_fatunmole_portfolio/core/layout/build/sizer.dart';
 extension Sizer on int {
   MediaQueryData get mq => MediaQueryData.fromView(WidgetsBinding.instance.platformDispatcher.views.single);
 
-  num get FIGMA_HEIGHT => deviceType == Device_Type.WEB ? 900 : 800;
+  num get FIGMA_HEIGHT => deviceType == Device_Type.WEB ? 1200 : 700;
 
   num get FIGMA_WIDTH => deviceType == Device_Type.WEB ? 1920 : 300;
 
@@ -22,5 +22,5 @@ extension Sizer on int {
 
   double get w => DEVICE_WIDTH / (FIGMA_WIDTH / this);
 
-  double get fsize => h > w ? h : w;
+  double get fsize => deviceType == Device_Type.WEB ? w : h;
 }
