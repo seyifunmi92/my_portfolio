@@ -5,7 +5,6 @@ part 'json.g.dart';
 @JsonSerializable()
 class Person {
   String firrstName, lastName, adress;
-
   int? age;
 
   Person({required this.firrstName, required this.lastName, required this.adress, this.age});
